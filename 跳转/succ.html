@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>支付成功的页面</title>
+	</head>
+	<body>
+		<div class="box">
+			<header>恭喜你，支付成功</header>
+			<section>
+				<span id="time">10</span>秒后自动跳转到首页
+			</section>
+			<footer>
+				<button type="button">立即返回</button>
+			</footer>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		/* 10秒后自动跳转 */
+		var times=10;
+		setInterval(function(){
+			times--;
+			document.getElementById("time").innerHTML=times;
+			if(times==0){
+				location.href="https://www.kugou.com/yy/html/rank.html";
+			}
+		},1000);
+		//1000是毫秒.就是等于1秒
+		/* setInterval(function(){
+			
+		},1000); */
+		
+		
+		/* 点击理解返回按钮，马上跳转 */
+		document.getElementsByTagName("button").item(0).onclick=function(){
+			location.href="https://www.kugou.com/yy/html/rank.html";
+		}
+	</script>
+</html>

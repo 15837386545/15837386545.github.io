@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>支付页面</title>
+		<link rel="stylesheet" type="text/css" href="../css/payStyle.css"/>
+		<script>
+			window.onload=function(){
+	var ins=document.getElementsByName("name");
+	/* console.log(ins); */
+	var payBox=document.getElementById("payBox");
+	/* console.log(payBox); */
+	var sum=0;
+	/* 点击确定按钮计算总和并显示在页面位置 */
+	document.getElementsByTagName("button").item(1).onclick=function(){
+		/* console.log(1); */
+		for(var i=0;i<ins.length;i++){
+			if(ins[i].checked==true){
+				var value=ins[i].value;
+				sum+=parseInt(value);
+			}
+			payBox.innerHTML="总计"+sum;
+			ins[i].checked="";
+		}
+	}
+	/* 点击取消按钮，总计归零并影藏 */
+	document.getElementsByTagName("button").item(0).onclick=function(){
+		/* console.log(1); */
+		for(var j=0;j<ins.length;j++){
+			ins[j].checked=false;
+		}
+		sum=0;
+		payBox.innerHTML="";
+	}
+	/* 点击支付并跳转页面 */
+	document.getElementsByTagName("button").item(2).onclick=function(){
+		var res=window.confirm("您确定要支付吗？");
+		if(res==true){
+			location.href="../html/succ.html";
+		}
+	}
+}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<header>商品信息</header>
+			<section>
+				<p><input type="checkbox" name="name" id="" value="7980" />Web前端（7980）</p>
+				<p><input type="checkbox" name="name" id="" value="7980" />java（7980）</p>
+				<p><input type="checkbox" name="name" id="" value="7980" />Python（7980）</p>
+			</section>
+			<div id="payBox"></div>
+			<footer>
+				<button type="button">取消</button>
+				<button type="button" >确定</button>
+				<button type="button">支付</button>
+			</footer>
+		</div>
+	</body>
+</html>

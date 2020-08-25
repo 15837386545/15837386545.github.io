@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+nav ul {
+  display: flex;
+  background-color: #222;
+}
+nav ul li {
+  flex: 1;
+  height: 80px;
+  line-height: 80px;
+}
+nav ul li:first-child {
+  flex: 0.5;
+}
+nav ul li:last-child {
+  flex:0 0 80px;
+}
+nav ul li:first-child img{
+  width: 160px;
+  height: 80px;
+}
+nav ul li:last-child img{
+  width: 80px;
+  height: 80px;
+	transition: all 2s ease-out;
+}
+nav ul li:last-child img:hover{
+	transform:rotate(360deg);
+	}
+nav li a {
+  display: flex;
+  justify-content: center;
+}
+
+nav ol {
+  display: none;
+  background: #333;
+}
+nav li:hover>ol {
+  display: block;
+}
+nav li a:hover {
+  background: #222;
+}
+
+header {
+  height: 700px;
+}
+
+header>img {
+  z-index: -1;position: absolute;
+  width: 100%;overflow: hidden;
+  animation: opacity 30s infinite linear;
+}
+
+header>img:nth-child(1) {
+  animation-delay: 10s;
+}
+
+header>img:nth-child(2) {
+  animation-delay: 20s;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  33% {
+    opacity: 0;
+  }
+
+  97% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+nav{
+  position: relative;
+}
+nav:before {
+  content: "";
+  width: 180px;
+  height: 180px;
+  background: url(img/deng.png);
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  animation: yao 6s linear infinite;
+  transform-origin: top;
+}
+@keyframes yao {
+  25% {
+    transform: rotate(8deg);
+  }
+
+  75% {
+    transform: rotate(-8deg);
+  }
+}
+footer p {
+  background: #e0f2f1;
+  text-align: center;
+  padding: 20px 0;
+}
+.container {width: 300px;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header {height: 60px;line-height: 60px;
+  border-bottom: 1px solid #f0f0f0;text-align: center;
+}
+
+.form {
+  padding: 30px;
+}
+
+.form button {
+  border-radius: 40px;
+  color: #666;
+  font-size: 22px;
+  width: 100%;
+}
+
+.form-control {
+  padding-bottom: 10px;
+}
+.maxBox{
+	width: 500px;
+	height: 375px;
+	border: solid black 1px;
+	margin: 50px auto;
+	position: relative;
+	
+	
+}
+.maxBox .minBox{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.maxBox .minBox img{
+	width: 100%;
+	height: 100%;
+}
+.maxBox ul{
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+}
+.maxBox ul li{
+	list-style: none;
+	float: left;
+	margin-left: 10px;
+	line-height: 30px;
+}
+.maxBox ul li a{
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+	color: white;
+	width: 30px;
+	height: 30px;
+	background: rgba(0,0,0,0.5);
+}
+.maxBox ul li a:hover{
+	background: blue;
+}
